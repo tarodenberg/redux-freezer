@@ -11,4 +11,4 @@ const store = compose(
 )(createStore)(rootReducer);
 ```
 
-IE9+.  Uses lodash.
+Uses lodash.
