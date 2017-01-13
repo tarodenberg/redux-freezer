@@ -1,0 +1,25 @@
+{
+    "name" : "redux-freezer",
+    "version" : "1.0.0",
+    "description" : "Freeze redux stores to ensure immutability",
+    "main" : "redux-freezer.js",
+    "repository" : {
+        "type" : "git",
+        "url" : "git://github.com/tarodenberg/redux-freezer.git"
+    },
+    "keywords" : [
+        "redux",
+        "freeze",
+        "store",
+        "recursive",
+        "deep",
+        "object",
+        "immutable"
+    ],
+    "author" : {
+        "name" : "Tom Rodenberg",
+        "email" : "tom@post.com",
+        "url" : "http://tr23.net"
+    },
+    "license" : "MIT"
+}
