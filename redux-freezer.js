@@ -4,7 +4,7 @@ export const deepFreeze = (object) => {
     Object.freeze(object);
 
     forOwn(object, (value, key) => {
-        if (value && isObject(value) && !isElement(value) && !Object.isFrozen(value)) {
+        if (value && (isObject(value) || isFunction(value)) && !isElement(value) && !Object.isFrozen(value)) {
             deepFreeze(value);
         }
     });
