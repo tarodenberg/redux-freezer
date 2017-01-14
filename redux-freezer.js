@@ -5,10 +5,10 @@ export const deepFreeze = (object) => {
     Object.freeze(object);
 
     forOwn(object, (value, key) => {
-        if (value && (isObject(value) || isFunction(value)) 
-            && !isElement(value) 
-            && !isValidElement(value) 
-            && !Object.isFrozen(value)) {
+        if (value && (isObject(value) || isFunction(value)) &&
+            !isElement(value) &&
+            !isValidElement(value) && 
+            !Object.isFrozen(value)) {
 
             deepFreeze(value);
         }
@@ -20,7 +20,9 @@ export const deepFreeze = (object) => {
 const freezer = store => next => action => {
     let result = next(action);
 
-    return deepFreeze(result);
+    deepFreeze(store.getState());
+
+    return result;
 };
 
 export default freezer;
