@@ -1,5 +1,4 @@
 import {forOwn, isElement, isFunction, isObject} from 'lodash';
-import {isValidElement} from 'react';
 
 export const deepFreeze = (object) => {
     Object.freeze(object);
@@ -7,7 +6,6 @@ export const deepFreeze = (object) => {
     forOwn(object, (value, key) => {
         if (value && (isObject(value) || isFunction(value)) &&
             !isElement(value) &&
-            !isValidElement(value) && 
             !Object.isFrozen(value)) {
 
             deepFreeze(value);
@@ -18,7 +16,7 @@ export const deepFreeze = (object) => {
 };
 
 const freezer = store => next => action => {
-    let result = next(action);
+    const result = next(action);
 
     deepFreeze(store.getState());
 
