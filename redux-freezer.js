@@ -1,4 +1,7 @@
-import {forOwn, isElement, isFunction, isObject} from 'lodash';
+import forOwn from 'lodash/forOwn';
+import isElement from 'lodash/isElement';
+import isFunction from 'lodash/isFunction';
+import isObject from 'lodash/isObject';
 
 export const deepFreeze = (object) => {
     Object.freeze(object);
