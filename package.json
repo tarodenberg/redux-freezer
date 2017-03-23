@@ -1,6 +1,6 @@
 {
   "name": "redux-freezer",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Freeze redux stores to ensure immutability",
   "main": "redux-freezer.js",
   "repository": {
